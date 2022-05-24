@@ -42,15 +42,15 @@ void loop()
                 int angle = json["angle"];
                 int strengh = json["strength"];
 
-                if (angle > 90 && angle < 180) {
+                if (angle > 50 && angle < 130) {
                     robot.move_forward();
                 }
-                else if(angle < 90) {
+                else if(angle > 130 && angle < 230) {
                     robot.move_left();
                 }
-                else if (angle > 180 && angle < 280) {
-                    robot.move_right();
-                } else if(angle > 280) {
+                else if (angle > 230 && angle < 330) {
+                    robot.move_backward();
+                } else if(angle > 330 || angle < 50) {
                     robot.move_backward();
                 } else {
                     robot.stop();
