@@ -11,13 +11,15 @@ float a2b(float a)
     return (a + HALF_PI) * 180 / PI;
 }
 
-String readStringUntil(SoftwareSerial BT, char terminator)
+String readStringUntil(SoftwareSerial serial, char terminator)
 {
     String str;
-
-    while (BT.available())
+    Serial.println(serial.available());
+    while (serial.available())
     {
-        char c = BT.read();
+        delay(10);
+        char c = serial.read();
+        Serial.println("c: " + c);
         if (c == terminator)
         {
             break;

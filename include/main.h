@@ -3,9 +3,9 @@
 
 #include "robot.h"
 
-#define WHEAL_MOTOR_1 2
-#define WHEAL_MOTOR_2 3
+#define BLUETOOTH_READ 6
+#define BLUETOOTH_WRITE 7
 
 Robot robot;
 
-SoftwareSerial BT(4, 2);
+SoftwareSerial BT(BLUETOOTH_READ, BLUETOOTH_WRITE);
